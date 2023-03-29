@@ -7,11 +7,30 @@
   - 커뮤니티, 동호회, 대회 쳐내고
   - 매치, 랭킹, 회원가입, 로그인 - refactor
 
+  - DTO 빌더패턴
+    - DTO 사용 안하는 컨트롤러 많음 -> 엔티티 타임리프에 주입 (수정해야 함)
+    - 엔티티 service 위로 안올라오게
+  - 엔티티
+    - 연관관계 다시 설계 (4/4)
+    - JPA 다시 공부
+  - 로깅 추가
+    - 유저 활동 내역 
+    - print문 없애기
+  - 테스트
+    - JUnit5, AssertJ, Mockito
+    - 스케줄러 테스트
+
 **chan**
 
 **seph**
 
 
+
+
+backend code convention : https://www.notion.so/Code-Convention-4440b33250cc47c0bc9e34cf24505ee3
+
+git commit message convention : https://gist.github.com/brianclements/841ea7bffdb01346392c
+                                https://velog.io/@outstandingboy/Git-%EC%BB%A4%EB%B0%8B-%EB%A9%94%EC%8B%9C%EC%A7%80-%EA%B7%9C%EC%95%BD-%EC%A0%95%EB%A6%AC-the-AngularJS-commit-conventions
 
 
 

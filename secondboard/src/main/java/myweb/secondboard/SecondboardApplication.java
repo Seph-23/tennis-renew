@@ -1,40 +1,12 @@
 package myweb.secondboard;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import java.io.File;
-import java.io.FileInputStream;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-
 import javax.persistence.EntityManager;
-import myweb.secondboard.domain.*;
-import myweb.secondboard.domain.Record;
-import myweb.secondboard.domain.boards.Lesson;
-import myweb.secondboard.domain.boards.Notice;
-import myweb.secondboard.domain.boards.Question;
-import myweb.secondboard.dto.MatchingSaveForm;
-import myweb.secondboard.repository.*;
-import myweb.secondboard.service.MatchingService;
-import myweb.secondboard.service.MemberImageService;
-import myweb.secondboard.service.MemberService;
-import myweb.secondboard.web.*;
-import org.apache.commons.io.IOUtils;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.core.annotation.Order;
-import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.stream.IntStream;
-import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 11월1일자 복구
@@ -52,6 +24,7 @@ public class SecondboardApplication {
   public String uploadPath() {
     return "/home/ubuntu/files";
   }
+
   @Bean
   JPAQueryFactory jpaQueryFactory(EntityManager entityManager) {
     return new JPAQueryFactory(entityManager);
