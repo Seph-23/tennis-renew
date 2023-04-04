@@ -33,9 +33,7 @@ public class CertificationService {
 
 		try {
 			JSONObject obj = (JSONObject)coolsms.send(params);
-			System.out.println(obj.toString());
 		} catch (RuntimeException e) {
-			System.out.println(e.getMessage());
 		} catch (CoolsmsException e) {
 			throw new RuntimeException(e);
 		}

@@ -31,13 +31,8 @@ public class KakaoController {
 	public String getCI(@RequestParam String code, Model model,
 		HttpServletRequest request) throws IOException {
 
-		System.out.println("code = " + code);
 		String access_token = kaKaoService.getToken(code);
 		Map<String, Object> userInfo = kaKaoService.getUserInfo(access_token);
-
-		//==카카오 로그인 정보==//
-		System.out.println("controller token value = " + userInfo.toString());
-		System.out.println("access_token = " + access_token);
 
 		if (memberService.findByEmail(userInfo.get("email").toString()).isEmpty()) {
 			Member member = memberService.kakaoSignUp(userInfo, access_token);

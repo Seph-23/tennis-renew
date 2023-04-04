@@ -58,8 +58,6 @@ public class LoginController {
 	public JSONObject loginModal(@RequestParam("loginId") String loginId,
 		@RequestParam String password, HttpServletRequest request) throws NoSuchAlgorithmException {
 		JSONObject result = new JSONObject();
-		System.out.println("loginId = " + loginId);
-		System.out.println("password = " + password);
 		Member loginMember = loginService.login(loginId, password);
 		if (loginMember == null) {
 			result.put("result", "fail");

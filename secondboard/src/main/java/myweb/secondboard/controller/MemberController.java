@@ -89,8 +89,6 @@ public class MemberController {
 		model.addAttribute("afterPlayerList", playerAfterList);
 		model.addAttribute("playerBeforeList", playerBeforeList);
 
-		//    System.out.println("playerList = " + playerList);
-
 		return "members/profileHome";
 	}
 
@@ -123,7 +121,6 @@ public class MemberController {
 	@PostMapping("/find")
 	public String findPassword(@Valid @ModelAttribute("form") FindPasswordForm form, BindingResult bindingResult) {
 
-		System.out.println("form.getLoginId() = " + form.getLoginId());
 		Optional<Member> findMemberByLoginId = memberService.findByLoginId(form.getLoginId());
 		Long updateMemberLoginId;
 		if (findMemberByLoginId.isPresent()) {
@@ -162,7 +159,6 @@ public class MemberController {
 	public String updatePassword(Model model, @PathVariable("updateMemberLoginId") Long updateMemberLoginId) {
 		UpdatePasswordForm form = new UpdatePasswordForm();
 		form.setId(updateMemberLoginId); // 155
-		System.out.println("form.getId() = " + form.getId());
 		model.addAttribute("form", form);
 
 		return "members/updateMemberPassword";
@@ -181,9 +177,6 @@ public class MemberController {
 			log.info("errors = {}", bindingResult);
 			return "members/updateMemberPassword";
 		}
-
-		System.out.println("updatePasswordCheck = " + updatePassword);
-		System.out.println("updatePasswordCheck = " + updatePasswordCheck);
 
 		if (!updatePassword.equals(updatePasswordCheck)) {
 			bindingResult.reject("NotMatchPassword", "새 비밀번호와 비밀번호 확인이 일치하지 않습니다.");

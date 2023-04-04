@@ -92,7 +92,6 @@ public class SchedulerService {
 					}
 				}
 			}
-			System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")) + " Schedule 실행됨");
 		}
 	}
 
@@ -150,8 +149,6 @@ public class SchedulerService {
 
 	public void updateGameResult(Matching matching) {
 		List<Player> players = playerRepository.findAllByMatchingId(matching.getId());
-
-		System.out.println("매칭업데이트");
 
 		for (Player player : players) {
 			if (player.getTeam().toString().equals("A")) {

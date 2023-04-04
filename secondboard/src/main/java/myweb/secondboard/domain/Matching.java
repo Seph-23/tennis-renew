@@ -136,13 +136,8 @@ public class Matching {
 		String[] split = matchContent.split("\\n");
 		String matchInfo = new String();
 		for (int i = 0; i < split.length; i++) {
-			System.out.println("split[i] = " + split[i]);
-			//      split[0] = 실력:하하
-			//      split[1] = 매너:상상
-			//      split[2] = 재밌는 게임해요
 			matchInfo += split[i] + "\n";
 			matching.setContent(matchInfo);
-			System.out.println("matchInfo = " + matchInfo);
 		}
 		return matching;
 	}

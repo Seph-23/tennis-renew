@@ -77,7 +77,6 @@ public class MatchingController {
 		for (Matching matching : matchingList) {
 			if (matching.getMember().getNickname().contains("탈퇴된")) {
 				matching.setAuthor(matching.getMember().getNickname());
-				System.out.println("matching.getMember().getNickname() = " + matching.getMember().getNickname());
 				matching.setMatchingCondition(MatchingCondition.FAIL);
 			}
 		}
@@ -173,7 +172,6 @@ public class MatchingController {
 		matchingForm.setLng(matching.getLng());
 		matchingForm.setContent(matching.getContent());
 		model.addAttribute("matchingForm", matchingForm);
-		System.out.println("matchingForm.getContent() = " + matchingForm.getContent());
 		String[] split = matchingForm.getContent().split("\\n");
 		List<String> matchContentList = new ArrayList<>(Arrays.asList(split));
 		model.addAttribute("matchContentList", matchContentList);
@@ -273,7 +271,6 @@ public class MatchingController {
 		for (Matching matching : matchingList) {
 			if (matching.getMember().getNickname().contains("탈퇴된")) {
 				matching.setAuthor(matching.getMember().getNickname());
-				System.out.println("matching.getMember().getNickname() = " + matching.getMember().getNickname());
 			}
 		}
 
@@ -314,13 +311,10 @@ public class MatchingController {
 		for (Matching matching : matchingList) {
 			if (matching.getMember().getNickname().contains("탈퇴된")) {
 				matching.setAuthor(matching.getMember().getNickname());
-				System.out.println("matching.getMember().getNickname() = " + matching.getMember().getNickname());
 			}
 		}
 
 		model.addAttribute("matchingList", matchingList);
-
-		//    model.addAttribute("matchingList", matchingList);
 
 		MatchingSaveForm matchingForm = new MatchingSaveForm();
 		model.addAttribute("matching", matchingForm);
