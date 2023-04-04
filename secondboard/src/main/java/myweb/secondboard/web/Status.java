@@ -1,13 +1,16 @@
 package myweb.secondboard.web;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
-public enum Status implements StatusMapperType{
-  RECRUITING("모집 중"),
-  END("모집 마감");
+@Getter
+public enum Status {
 
-  @Getter
-  private final String title;
+	RECRUITING("모집 중"),
+	END("모집 마감");
+
+	private final String title;
+
+	Status(String title) {
+		this.title = title;
+	}
 }

@@ -1,21 +1,20 @@
 package myweb.secondboard.web;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
-public enum MatchingStatus implements MatchingConditionMapper{
+@Getter
+public enum MatchingStatus {
 
-  BEFORE("경기전"),
+	BEFORE("경기전"),
+	TWOHOURBEFORE("두시간전"),
+	HOURBEFORE("한시간전"),
+	ONGOING("신청마감"),
+	AFTER("경기후"),
+	WEEKAFTER("일주일후");
 
-  TWOHOURBEFORE("두시간전"),
-  HOURBEFORE("한시간전"),
-  ONGOING("신청마감"),
-  AFTER("경기후"),
+	private final String title;
 
-  WEEKAFTER("일주일후");
-
-  @Getter
-  private final String title;
-
+	MatchingStatus(String title) {
+		this.title = title;
+	}
 }

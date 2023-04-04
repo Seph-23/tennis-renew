@@ -1,13 +1,18 @@
 package myweb.secondboard.web;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
-public enum GameResult implements GameResultMapper{
-  WIN("승리"), LOSE("패배"), NORECORD("결과미등록"), PENALTY("무효");
+@Getter
+public enum GameResult {
 
-  @Getter
-  private final String title;
+	WIN("승리"),
+	LOSE("패배"),
+	NORECORD("결과미등록"),
+	PENALTY("무효");
 
+	private final String title;
+
+	GameResult(String title) {
+		this.title = title;
+	}
 }

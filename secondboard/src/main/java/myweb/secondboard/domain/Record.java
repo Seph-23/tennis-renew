@@ -1,12 +1,16 @@
 package myweb.secondboard.domain;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.DynamicInsert;
-
-import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Getter
@@ -14,30 +18,30 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class Record implements Serializable {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "record_id")
-  private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "record_id")
+	private Long id;
 
-  private Integer win;
+	private Integer win;
 
-  private Integer lose;
+	private Integer lose;
 
-  private Integer penalty;
+	private Integer penalty;
 
-  private Double rate;
+	private Double rate;
 
-  private Integer points;
+	private Integer points;
 
-  public static Record createRecord() {
-    Record record = new Record();
-    record.setWin(0);
-    record.setLose(0);
-    record.setPenalty(0);
-    record.setRate(0.0);
-    record.setPoints(100);
-    return record;
-  }
+	public static Record createRecord() {
+		Record record = new Record();
+		record.setWin(0);
+		record.setLose(0);
+		record.setPenalty(0);
+		record.setRate(0.0);
+		record.setPoints(100);
+		return record;
+	}
 }
 
 

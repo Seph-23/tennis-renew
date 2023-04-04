@@ -1,17 +1,18 @@
 package myweb.secondboard.web;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
-public enum MatchingType implements MatchingMapperType{
-  SINGLE("단식", "2"),
-  DOUBLE("복식", "4");
+@Getter
+public enum MatchingType {
 
-  @Getter
-  private final String title;
+	SINGLE("단식", "2"),
+	DOUBLE("복식", "4");
 
-  @Getter
-  private final String code;
+	private final String title;
+	private final String code;
 
+	MatchingType(String title, String code) {
+		this.title = title;
+		this.code = code;
+	}
 }

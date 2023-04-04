@@ -1,16 +1,16 @@
 package myweb.secondboard.web;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
-public enum CourtType implements CourtMapperType{
+@Getter
+public enum CourtType {
 
-  INDOOR("실내"),
-  OUTDOOR("실외");
+	INDOOR("실내"),
+	OUTDOOR("실외");
 
-  @Getter
-  private final String title;
+	private final String title;
 
-
+	CourtType(String title) {
+		this.title = title;
+	}
 }

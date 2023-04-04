@@ -1,5 +1,6 @@
 package myweb.secondboard.web;
 
 public enum Provider {
-  GOGOTENNIS, KAKAO;
+
+	GOGOTENNIS, KAKAO;
 }
