@@ -1,0 +1,22 @@
+2023-04-04 20:51:00,004 [pool-2-thread-1] DEBUG org.springframework.orm.jpa.JpaTransactionManager(getTransaction:370) - Creating new transaction with name [null]: PROPAGATION_REQUIRES_NEW,ISOLATION_DEFAULT
+2023-04-04 20:51:00,009 [pool-2-thread-1] DEBUG org.springframework.orm.jpa.JpaTransactionManager(doBegin:412) - Opened new EntityManager [SessionImpl(249701608<open>)] for JPA transaction
+2023-04-04 20:51:00,010 [pool-2-thread-1] DEBUG org.springframework.orm.jpa.JpaTransactionManager(doBegin:440) - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@76f098f0]
+2023-04-04 20:51:00,010 [pool-2-thread-1] DEBUG org.springframework.jdbc.core.JdbcTemplate(update:958) - Executing prepared SQL update
+2023-04-04 20:51:00,011 [pool-2-thread-1] DEBUG org.springframework.jdbc.core.JdbcTemplate(execute:643) - Executing prepared SQL statement [DELETE FROM SPRING_SESSION WHERE EXPIRY_TIME < ?]
+2023-04-04 20:51:00,014 [pool-2-thread-1] DEBUG org.springframework.orm.jpa.JpaTransactionManager(processCommit:740) - Initiating transaction commit
+2023-04-04 20:51:00,014 [pool-2-thread-1] DEBUG org.springframework.orm.jpa.JpaTransactionManager(doCommit:557) - Committing JPA transaction on EntityManager [SessionImpl(249701608<open>)]
+2023-04-04 20:51:00,014 [pool-2-thread-1] DEBUG org.springframework.orm.jpa.JpaTransactionManager(doCleanupAfterCompletion:648) - Closing JPA EntityManager [SessionImpl(249701608<open>)] after transaction
+2023-04-04 20:51:00,015 [pool-2-thread-1] DEBUG org.springframework.session.jdbc.JdbcIndexedSessionRepository(cleanUpExpiredSessions:591) - Cleaned up 0 expired sessions
+2023-04-04 20:51:02,886 [SpringApplicationShutdownHook] DEBUG org.springframework.boot.availability.ApplicationAvailabilityBean(onApplicationEvent:77) - Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2023-04-04 20:51:02,886 [SpringApplicationShutdownHook] DEBUG org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext(doClose:1049) - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@78e2ff15, started on Tue Apr 04 20:50:37 KST 2023
+2023-04-04 20:51:02,887 [SpringApplicationShutdownHook] DEBUG org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertyResolver$DefaultResolver(logKeyFound:115) - Found key 'spring.liveBeansView.mbeanDomain' in PropertySource 'systemProperties' with value of type String
+2023-04-04 20:51:02,888 [SpringApplicationShutdownHook] DEBUG org.springframework.context.support.DefaultLifecycleProcessor(stop:365) - Stopping beans in phase 2147483647
+2023-04-04 20:51:02,889 [SpringApplicationShutdownHook] DEBUG org.springframework.context.support.DefaultLifecycleProcessor(lambda$doStop$3:238) - Bean 'webServerGracefulShutdown' completed its stop procedure
+2023-04-04 20:51:02,889 [SpringApplicationShutdownHook] DEBUG org.springframework.context.support.DefaultLifecycleProcessor(stop:365) - Stopping beans in phase 2147483646
+2023-04-04 20:51:02,901 [SpringApplicationShutdownHook] DEBUG org.springframework.context.support.DefaultLifecycleProcessor(lambda$doStop$3:238) - Bean 'webServerStartStop' completed its stop procedure
+2023-04-04 20:51:02,901 [SpringApplicationShutdownHook] DEBUG org.springframework.context.support.DefaultLifecycleProcessor(stop:365) - Stopping beans in phase -2147483647
+2023-04-04 20:51:02,901 [SpringApplicationShutdownHook] DEBUG org.springframework.context.support.DefaultLifecycleProcessor(lambda$doStop$3:238) - Bean 'springBootLoggingLifecycle' completed its stop procedure
+2023-04-04 20:51:02,902 [SpringApplicationShutdownHook] DEBUG org.springframework.jmx.export.annotation.AnnotationMBeanExporter(destroy:452) - Unregistering JMX-exposed beans on shutdown
+2023-04-04 20:51:02,902 [SpringApplicationShutdownHook] DEBUG org.springframework.jmx.export.annotation.AnnotationMBeanExporter(unregisterBeans:186) - Unregistering JMX-exposed beans
+2023-04-04 20:51:02,903 [SpringApplicationShutdownHook] DEBUG org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor(shutdown:218) - Shutting down ExecutorService 'applicationTaskExecutor'
+2023-04-04 20:51:02,904 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean(destroy:651) - Closing JPA EntityManagerFactory for persistence unit 'default'

@@ -1,0 +1,1 @@
+2023-04-04 20:46:31,822 [http-nio-8080-exec-7] TRACE org.hibernate.type.descriptor.sql.BasicBinder(bind:64) - binding parameter [1] as [BIGINT] - [1]

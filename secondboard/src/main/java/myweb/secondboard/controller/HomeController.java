@@ -1,12 +1,11 @@
 package myweb.secondboard.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import myweb.secondboard.dto.LoginForm;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Slf4j
 @Controller
@@ -16,6 +15,10 @@ public class HomeController {
 	@GetMapping("/")
 	public String home(Model model) {
 		model.addAttribute("loginForm", new LoginForm()); //Modal창 용
+
+		log.info("hellohello");
+		log.error("error");
+		log.debug("hello");
 
 		return "home";
 	}
