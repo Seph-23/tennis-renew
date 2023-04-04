@@ -13,14 +13,15 @@
     <Console name="console" target="SYSTEM_OUT">
       <PatternLayout pattern="${layoutPattern}" disableAnsi = "false"/>
     </Console>
+    <!--ConsoleAppender, RollingFileAppneder -->
     <RollingFile name="file"
-      fileName="logs/${logFileName}.log"
-      filePattern="logs/${logFileName}.%d{yyyy-MM-dd-hh}.log">
+                 fileName="logs/${logFileName}.log"
+                 filePattern="logs/${logFileName}.%d{yyyy-MM-dd-hh}.log.zip">
       <PatternLayout pattern="${fileLayout}" />
       <Policies>
         <TimeBasedTriggeringPolicy
-          modulate="true"
-          interval="12" /><!-- 시간별 로그 파일 생성-->
+                modulate="true"
+                interval="12" /><!-- 시간별 로그 파일 생성-->
       </Policies>
       <DefaultRolloverStrategy max="5" fileIndex="min" > <!-- 롤링 파일 5개 까지 생성 -->
         <Delete basePath="/logs" maxDepth="3">
@@ -29,16 +30,14 @@
       </DefaultRolloverStrategy>
     </RollingFile>
 
-
-    <!--ConsoleAppender, RollingFileAppneder -->
     <RollingFile name="sql_log"
-      fileName="logs/sql.log"
-      filePattern="logs/sql.%d{yyyy-MM-dd-hh}.log.zip">
+                 fileName="logs/sql.log"
+                 filePattern="logs/sql.%d{yyyy-MM-dd-hh}.log.zip">
       <PatternLayout pattern="${fileLayout}" />
       <Policies>
         <TimeBasedTriggeringPolicy
-          modulate="true"
-          interval="12" /><!-- 시간별 로그 파일 생성-->
+                modulate="true"
+                interval="12" /><!-- 시간별 로그 파일 생성-->
       </Policies>
       <DefaultRolloverStrategy max="5" fileIndex="min" > <!-- 롤링 파일 5개 까지 생성 -->
         <Delete basePath="/logs" maxDepth="3">
@@ -48,13 +47,13 @@
     </RollingFile>
 
     <RollingFile name="sql_basicBinder_log"
-      fileName="logs/sql_basicBinder.log"
-      filePattern="logs/sql_basicBinder.%d{yyyy-MM-dd-hh}.log.zip">
+                 fileName="logs/sql_basicBinder.log"
+                 filePattern="logs/sql_basicBinder.%d{yyyy-MM-dd-hh}.log.zip">
       <PatternLayout pattern="${fileLayout}" />
       <Policies>
         <TimeBasedTriggeringPolicy
-          modulate="true"
-          interval="12" /><!-- 시간별 로그 파일 생성-->
+                modulate="true"
+                interval="12" /><!-- 시간별 로그 파일 생성-->
       </Policies>
       <DefaultRolloverStrategy max="5" fileIndex="min" > <!-- 롤링 파일 5개 까지 생성 -->
         <Delete basePath="/logs" maxDepth="3">
@@ -65,7 +64,7 @@
 
   </Appenders>
 
-  <!--ALL > TRACE > DEBUG > INFO > WARN > ERROR > FATAL -->
+  <!--TRACE > DEBUG > INFO > WARN > ERROR > FATAL -->
   <!--Log가 찍힐 대상 설정.-->
   <Loggers>
     <!-- 스프링 프레임워크에서 찍는건 level을 info로 설정 -->
@@ -84,7 +83,7 @@
       <AppenderRef ref="sql_log"/>
     </logger>
 
-     <!-- jdbc exception 설정-->
+     <!-- sql 파라미터 표시 설정 -->
     <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="trace" additivity="false">
       <AppenderRef ref="console"/>
       <AppenderRef ref="sql_basicBinder_log"/>
