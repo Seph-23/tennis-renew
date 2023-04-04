@@ -15,11 +15,6 @@ public class HomeController {
 	@GetMapping("/")
 	public String home(Model model) {
 		model.addAttribute("loginForm", new LoginForm()); //Modal창 용
-
-		log.info("hellohello");
-		log.error("error");
-		log.debug("hello");
-
 		return "home";
 	}
 }
